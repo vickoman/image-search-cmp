@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './assets/main.css';
 import api from './Components/api';
 import SearchBar from './Components/SearchBar';
+import ImagesList from './Components/ImagesList';
 require('dotenv').config()
 
 function App() {
@@ -14,9 +15,12 @@ function App() {
     setImages(response.data.results);
   }
   return (
-    <div className="antialiased font-sans h-scree">
-      <SearchBar onSubmitSearch={onSubmitSearch} />
-      { console.log(images)}
+    <div className="antialiased font-sans h-scree bg-gray-100 h-screen">
+      <div className="p-10">
+        <SearchBar onSubmitSearch={onSubmitSearch} />
+        { console.log(images)}
+        <ImagesList images={images} />
+      </div>
     </div>
   );
 }
