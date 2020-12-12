@@ -1,23 +1,26 @@
-import React, { useState } from 'react'
+import { useFormik } from 'formik';
+import React from 'react'
 
 const SearchBar =  () => {
-    const [term, setTerm] = useState("");
-
-    const onSearchSubmit = (e) => {
-        e.preventDefault();
-        console.log(e);
-        alert("adasd");
-    }
+    const formik = useFormik({
+        initialValues: {
+            term: ""
+        },
+        onSubmit: (values) => {
+            alert(JSON.stringify(values, null, 2));
+        }
+    });
     return (
         <div>
-            <form onSubmit={onSearchSubmit}>
-            <input
-                class="form-input mt-1 block w-full border py-6"
-                placeholder="Place the term here"
-                id="term"
-                value={term}
-                onChange={(e) => setTerm(e.target.value.toLowerCase())}
-            />
+            <form onSubmit={formik.handleSubmit}>
+                <input
+                    className="form-input mt-1 block w-full border py-6"
+                    placeholder="Place the term here"
+                    name="term"
+                    id="term"
+                    value={formik.values.term}
+                    onChange={formik.handleChange}
+                />
             </form>
         </div>
     )
