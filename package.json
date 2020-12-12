@@ -9,16 +9,17 @@
     "autoprefixer": "^9",
     "axios": "^0.21.0",
     "dotenv": "^8.2.0",
+    "formik": "^2.2.6",
     "install": "^0.13.0",
-    "postcss": "^7",
+    "postcss": "^8",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "tailwindcss": "^2.0.2",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "npm run watch:css && react-scripts start",
+    "start": "npm run watch:css && react-scripts start ",
     "build": "npm run watch:css && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -43,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "@tailwindcss/custom-forms": "^0.2.1",
     "postcss-cli": "^8.3.0"
   }
 }
