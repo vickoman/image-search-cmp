@@ -1,13 +1,13 @@
 import { useFormik } from 'formik';
 import React from 'react'
 
-const SearchBar =  () => {
+const SearchBar =  ({onSubmitSearch}) => {
     const formik = useFormik({
         initialValues: {
             term: ""
         },
         onSubmit: (values) => {
-            alert(JSON.stringify(values, null, 2));
+            onSubmitSearch(values.term.toLowerCase());
         }
     });
     return (
